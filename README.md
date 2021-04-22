@@ -67,7 +67,7 @@ Params:
 ]
 ```
 
-Example:
+使用示例:
 ```php
 // 消费者使用示例
 <?php
