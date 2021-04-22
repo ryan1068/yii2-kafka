@@ -125,7 +125,7 @@ class DemoController extends ConsumerController
     }
 }
 
-// 生产者发布一条消息
+// 生产者使用示例
 \Yii::$app->kafka->produce('notification', ['id' => 1, 'scene' => 0]);
 
 ```
