@@ -1,8 +1,7 @@
 # yii2-kafka
-###通过docker安装kafka，zookeeper服务
+### 通过docker安装kafka，zookeeper服务
+#### docker-compose配置：
 ```php
-docker-compose配置：
-
 ### ZooKeeper #########################################
     zookeeper:
       build: ./zookeeper
@@ -42,7 +41,7 @@ docker-compose配置：
         - backend
 ```
 
-Yii2配置：
+#### Yii2配置：
 
 Config:
 ```php
