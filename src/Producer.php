@@ -1,5 +1,5 @@
 <?php
-namespace common\components\kafka;
+namespace yii\kafka;
 
 use yii\helpers\Json;
 
@@ -85,7 +85,7 @@ class Producer extends Queue
         try {
             $topic = $this->newTopic($topicName);
             $payload = $this->handlePayload($payload, $uid);
-            $topic->produce(RD_KAFKA_PARTITION_UA, $partition, $payload);
+            $topic->produce(RD_KAFKA_PARTITION_UA, 0, $payload);
             $this->poll(0);
             $result = $this->flush(10000);
 

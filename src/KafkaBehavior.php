@@ -1,5 +1,5 @@
 <?php
-namespace common\components\kafka;
+namespace yii\kafka;
 
 use Yii;
 use yii\base\Behavior;

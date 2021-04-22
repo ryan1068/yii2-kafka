@@ -1,15 +1,15 @@
 <?php
 
-namespace console\controllers;
+namespace yii\kafka\console\controllers;
 
 use common\components\kafka\Consumer;
 use common\components\kafka\KafkaBehavior;
 
 /**
- * Class NotificationController
+ * Class DemoController
  * @package console\controllers
  */
-abstract class BaseController extends \yii\console\Controller
+abstract class ConsumerController extends \yii\console\Controller
 {
     /**
      * @var Consumer

@@ -1,5 +1,5 @@
 <?php
-namespace common\components\kafka;
+namespace yii\kafka;
 
 use yii\helpers\Json;
 
@@ -111,7 +111,7 @@ class Consumer extends Queue
     public function newTopic()
     {
         $topicConf = new \RdKafka\TopicConf();
-        foreach ($this->getConfig('topicConfig') as $key => $value) {
+        foreach ($this->getConfig('topic') as $key => $value) {
             $topicConf->set($key, $value);
         }
 

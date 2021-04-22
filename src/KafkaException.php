@@ -1,7 +1,7 @@
 <?php
 
 
-namespace common\components\kafka;
+namespace yii\kafka;
 
 
 use yii\base\UserException;
