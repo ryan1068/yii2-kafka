@@ -27,7 +27,7 @@ class DemoController extends ConsumerController
     }
 
     /**
-     * 开启新消费者需重新定义topicName
+     * 开启新消费者需重新定义主题名称
      * @return string 主题名称
      */
     public function getTopicName()
@@ -36,6 +36,7 @@ class DemoController extends ConsumerController
     }
 
     /**
+     * 开启新消费者需要重新定义分组id
      * @return string 分组id
      */
     public function getGroupId()
