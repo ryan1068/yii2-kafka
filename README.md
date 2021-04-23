@@ -73,27 +73,27 @@ Params:
 <?php
 namespace console\controllers;
 
-use common\services\NotifyService;
+use common\services\NotificationService;
 
 /**
  * 系统消息消费队列
- * Class DemoController
+ * Class NotificationController
  * @package console\controllers
  */
-class DemoController extends ConsumerController
+class NotificationController extends ConsumerController
 {
-    public $notifyService;
+    public $notificationService;
 
     /**
      * DemoController constructor.
      * @param $id
      * @param $module
-     * @param NotifyService $notifyService
+     * @param NotificationService $notificationService
      * @param array $config
      */
-    public function __construct($id, $module, NotifyService $notifyService, $config = [])
+    public function __construct($id, $module, NotificationService $notificationService, $config = [])
     {
-        $this->notifyService = $notifyService;
+        $this->notificationService = $notificationService;
         parent::__construct($id, $module, $config);
     }
 
@@ -131,7 +131,7 @@ class DemoController extends ConsumerController
      */
     public function consume($payload)
     {
-        $this->notifyService->sendMessage($payload['id'], $payload['scene']);
+        $this->notificationService->sendMessage($payload['id'], $payload['scene']);
     }
 }
 
