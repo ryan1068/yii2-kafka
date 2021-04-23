@@ -2,8 +2,7 @@
 
 namespace yii\kafka\console\controllers;
 
-use common\components\kafka\Consumer;
-use common\components\kafka\KafkaBehavior;
+use yii\kafka\Consumer;
 
 /**
  * Class DemoController
