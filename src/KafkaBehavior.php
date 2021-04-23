@@ -15,8 +15,14 @@ class KafkaBehavior extends Behavior
      * @var Queue
      */
     public $owner;
-
+    /**
+     * @var float
+     */
     private $_start;
+    /**
+     * @var string|array
+     */
+    public $tableName;
 
     /**
      * @inheritdoc
@@ -36,7 +42,7 @@ class KafkaBehavior extends Behavior
      */
     public function getCollection()
     {
-        return Yii::$app->mongodb->getCollection(['cst_ucenter', 'kafka_queue_log']);
+        return Yii::$app->mongodb->getCollection($this->tableName);
     }
     
     /**

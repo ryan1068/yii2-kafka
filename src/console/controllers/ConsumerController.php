@@ -26,7 +26,6 @@ abstract class ConsumerController extends \yii\console\Controller
             $this->getGroupId(),
             $this->getTopicName()
         ]);
-        $this->consumer->attachBehavior('kafka', KafkaBehavior::class);
     }
 
     /**
@@ -60,9 +59,22 @@ abstract class ConsumerController extends \yii\console\Controller
         }
     }
 
+    /**
+     * 开启新消费者需要重新定义主题名称
+     * @return string 主题名称
+     */
     abstract public function getTopicName();
 
+    /**
+     * 开启新消费者需要重新定义分组id
+     * @return string 分组id
+     */
     abstract public function getGroupId();
 
+    /**
+     * 消费者实际执行业务代码的方法
+     * @param $payload
+     * @return mixed
+     */
     abstract public function consume($payload);
 }

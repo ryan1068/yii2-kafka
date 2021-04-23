@@ -98,7 +98,18 @@ class DemoController extends ConsumerController
     }
 
     /**
-     * 开启新消费者需重新定义主题名称
+     * @throws \yii\base\InvalidConfigException
+     */
+    public function init()
+    {
+        parent::init();
+        $this->consumer->attachBehavior('kafka', [
+            'class' => KafkaBehavior::class,
+            'tableName' => 'kafka_queue_log'
+        ]);
+    }
+
+    /**
      * @return string 主题名称
      */
     public function getTopicName()
@@ -107,7 +118,6 @@ class DemoController extends ConsumerController
     }
 
     /**
-     * 开启新消费者需要重新定义分组id
      * @return string 分组id
      */
     public function getGroupId()
@@ -116,7 +126,6 @@ class DemoController extends ConsumerController
     }
 
     /**
-     * 消费者实际执行业务代码的方法
      * @param $payload
      * @throws \yii\base\UserException
      */
